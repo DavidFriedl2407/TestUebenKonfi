@@ -34,5 +34,16 @@ class AccountTest {
 
     @org.junit.jupiter.api.Test
     void debit() {
+        Account account3=new Account("Heinz");
+        account3.debit(90);
+        assertEquals(10,account3.getAmount());
+        assertTrue(account3.debit(10));
+    }
+
+    @Test
+    void debit2() {
+        Account account4=new Account("Michael");
+
+        assertFalse(account4.debit(120));
     }
 }
